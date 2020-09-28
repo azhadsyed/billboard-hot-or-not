@@ -51,9 +51,9 @@ class ChartList:
         
 if __name__ == '__main__':
     chartlist = ChartList()
-    chartlist.get_charts('Social-50', '2011-01-01', 'inception') # 4 (?) charts
-    chartlist.get_charts('Billboard-200', '2020-06-01', '2020-03-01') # 13 charts
+    chartlist.get_charts('Social-50', '2011-01-01', start = 'inception') # 4 (?) charts
+    chartlist.get_charts('Hot-100', '2020-09-26', start = '2020-08-01')
     chartlist.get_charts('Artist-100', ['2020-07-01', '2015-07-01']) # 2 charts
-    chartlist.get_charts('Hot-100', '2020-08-01') # 1 chart
+    chartlist.get_charts('Billboard-200', '2020-08-01') # 1 chart
     chartlist.to_pickle('pickle/chartlist.pkl')
-    chartlist.to_json('chartlist.json')
+    chartlist.to_json('json/chartlist.json')
