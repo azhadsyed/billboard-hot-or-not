@@ -5,6 +5,7 @@ def string_to_date(x):
     return datetime.strptime(x, '%Y-%m-%d')
 def chart_to_dict(chart):
     return (chart.title, chart.date, [{'title': i.title, 'artist': i.artist, 'rank': i.rank} for i in chart.entries])
+    
 class ChartList:
     def __init__(self):
         self.charts = []
@@ -51,9 +52,10 @@ class ChartList:
         
 if __name__ == '__main__':
     chartlist = ChartList()
-    chartlist.get_charts('Social-50', '2011-01-01', start = 'inception') # 4 (?) charts
-    chartlist.get_charts('Hot-100', '2020-09-26', start = '2020-08-01')
-    chartlist.get_charts('Artist-100', ['2020-07-01', '2015-07-01']) # 2 charts
-    chartlist.get_charts('Billboard-200', '2020-08-01') # 1 chart
-    chartlist.to_pickle('pickle/chartlist.pkl')
-    chartlist.to_json('json/chartlist.json')
+#    chartlist.get_charts('Social-50', '2011-01-01', start = 'inception') # 4 (?) charts
+#    chartlist.get_charts('Hot-100', '2020-09-26', start = '2020-08-01')
+#    chartlist.get_charts('Artist-100', ['2020-07-01', '2015-07-01']) # 2 charts
+#    chartlist.get_charts('Billboard-200', '2020-08-01') # 1 chart
+    chartlist.get_charts('Hot-100', '2009-10-03', start = 'inception')
+    chartlist.to_pickle('pickle/hot100.pkl')
+#    chartlist.to_json('json/chartlist.json')
