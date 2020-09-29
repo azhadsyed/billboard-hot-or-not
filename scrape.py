@@ -18,7 +18,8 @@ class ChartList:
             self.charts.append(chart_to_dict(chart))
             self.retries = 0
             return chart.previousDate
-        except:
+        except Exception as e:
+            print(e)
             if self.retries >= 5:
                 print ('Timed out five times, ending run')
                 self.off = True
