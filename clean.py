@@ -26,10 +26,16 @@ def clean(df):
     clean.drop_duplicates(keep = 'first', inplace = True)
     return clean
 
+class Cleaner:
+    def __init__(self, file):
+        with open('pickle/chartlist.pkl', 'rb') as f: self.tuples = pickle.load(f) 
+    def clean(self):
+        self.data = pd.concat([tuple_to_dict(i) for i in self.tuples])
+        self.data_clean = clean(self.data)
+    def to_pickle(self, outfile):
+        self.data_clean.to_pickle(outfile)
+
 if __name__ == '__main__':
-    with open('pickle/chartlist copy.pkl', 'rb') as g: a = pickle.load(g)
-    dfs = [tuple_to_dict(i) for i in a]
-    data = pd.concat(dfs)
-    clean = clean(data)
-    print(data.shape)
-    print(clean.iloc[200].featured_artist)
+    cleaner = Cleaner('pickle/hot100.pkl')
+    cleaner.clean()
+    cleaner.to_pickle('pickle/hot100_clean.pkl')
