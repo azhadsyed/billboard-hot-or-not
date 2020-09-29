@@ -28,7 +28,7 @@ def clean(df):
 
 class Cleaner:
     def __init__(self, file):
-        with open('pickle/chartlist.pkl', 'rb') as f: self.tuples = pickle.load(f) 
+        with open(file, 'rb') as f: self.tuples = pickle.load(f) 
     def clean(self):
         self.data = pd.concat([tuple_to_dict(i) for i in self.tuples])
         self.data_clean = clean(self.data)
