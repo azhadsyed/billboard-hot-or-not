@@ -21,6 +21,7 @@ def get_featured_artists(x):
 def clean(df):
     clean = df
     clean['chart_date_64'] = clean.chart_date.apply(lambda x: datetime.strptime(x, '%Y-%m-%d'))
+    clean['year'] = clean.chart_date_64.apply(lambda x: x.year)
     clean['main_artist'] = clean.artist.apply(get_main_artists)
     clean['featured_artist'] = clean.artist.apply(get_featured_artists)
     clean.drop_duplicates(keep = 'first', inplace = True)
@@ -31,9 +32,9 @@ class Cleaner:
         with open(file, 'rb') as f: self.tuples = pickle.load(f) 
     def clean(self):
         self.data = pd.concat([tuple_to_dict(i) for i in self.tuples])
-        self.data_clean = clean(self.data)
+        self.clean_data = clean(self.data)
     def to_pickle(self, outfile):
-        self.data_clean.to_pickle(outfile)
+        self.clean_data.to_pickle(outfile)
 
 if __name__ == '__main__':
     cleaner = Cleaner('pickle/hot100.pkl')
