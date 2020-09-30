@@ -140,6 +140,7 @@ To generate the bump chart, I tested four metrics to rank months by decade:
 1. rank the 12 calendar months from most new music to least each year, then took the mean value of each month by decade. 
 2. Same as number 1 but use median value of each month instead.
 3. For each decade, take the total number of songs that were released each month
+4. For each decade, take the median number of songs that were released for each month (median of 10 Januaries, median of 10 Februaries, etc.)
 
 In the end I chose metric 1 because it contained the least noise of the four metrics I tested (noise being defined as the sum of differences between each rank and the subsequent decade's rank). 
 
