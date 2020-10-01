@@ -4,8 +4,8 @@ Welcome to the repository for my Medium analysis of the Billboard Hot 100! This 
 
 In case you missed the article, this project involved downloading chart entries from the Billboard Hot 100 and discovered: 
 
-- Each year, fewer and fewer artists make the Hot 100, suggesting pop music is becoming more exclusive
-- Artists release more music per capita in the 2010's than in the 70's/80's/90's (how much more)
+- Each year, 3 fewer artists share the Hot 100 spots, suggesting pop music is becoming more exclusive
+- Artists release 1.5x more music per capita in the 2010's than in the 70's/80's/90's
 - On-demand streaming means artists nowadays chart more singles on the Hot 100 vs. the CD era (where singles only gained traction through radio-play)
 - January and February see the fewest new music releases, while March and October see the most new music on the chart
 
