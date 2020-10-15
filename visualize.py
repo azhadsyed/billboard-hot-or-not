@@ -74,8 +74,13 @@ bump.update_traces(
     marker = dict(size = 27),
     line = dict(width = 8))
 bump.update_layout (
-    title = "Which Month Has the Most New Music Releases?",
-    title_x = 0.5, 
+    title=dict(
+        text='<b>Which Month Has the Most New Music Releases?</b>',
+        x=0.5,
+        font=dict(
+            family="Arial",
+            size=20,
+            color='#000000')),
     font = dict(family = 'Arial'),
     showlegend = False)
 
@@ -102,10 +107,11 @@ bar4 = render_bar(
 
 renders = [bump, bar1, bar2, bar3, bar4]
 
+folder = 'svg'
 for n, chart in enumerate(renders):
-    filepath = 'svg/{}.svg'.format(n)
+    filepath = '{}/{}.svg'.format(folder, n)
     chart.write_image(filepath)
 
 for n, chart in enumerate(renders):
-    filepath = 'svg/{}.png'.format(n)
+    filepath = '{}/{}.png'.format(folder, n)
     chart.write_image(filepath)
