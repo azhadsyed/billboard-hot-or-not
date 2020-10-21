@@ -1,6 +1,6 @@
 # Hot or Not: Billboard Github Repository and Code Walkthrough
 
-Welcome to the repository for my Medium analysis of the Billboard Hot 100! This repository reviews how I gathered, cleaned, analyzed and visualized the Hot 100 Charts over time.
+Welcome to the repository for my [Medium analysis](https://azhadsyed.medium.com/hot-or-not-analyzing-60-years-of-billboard-hot-100-data-21e1a02cf304) of the Billboard Hot 100! This repository reviews how I gathered, cleaned, analyzed and visualized the Hot 100 Charts over time.
 
 In case you missed the article, this project involved downloading chart entries from the Billboard Hot 100 and discovered: 
 
